@@ -1,0 +1,8 @@
+SELECT
+nama,
+ROUND(ST_Area(geom::geography)::numeric)
+as luas_m2,
+ROUND(ST_Area(geom::geography)::numeric
+/ 10000, 2) as luas_ha
+FROM wilayah
+LIMIT 3;
