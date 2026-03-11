@@ -1,0 +1,8 @@
+SELECT 
+w.nama AS wilayah,
+COUNT(f.id) AS jumlah_fasilitas
+FROM wilayah w
+LEFT JOIN fasilitas_publik f
+ON ST_Contains(w.geom, f.geom)
+GROUP BY w.nama
+ORDER BY jumlah_fasilitas DESC;
