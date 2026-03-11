@@ -1,0 +1,4 @@
+SELECT f.nama, f.jenis
+FROM fasilitas_publik f
+JOIN wilayah k ON ST_Intersects(f.geom, k.geom)
+WHERE k.nama = 'Kecamatan Penengahan';
