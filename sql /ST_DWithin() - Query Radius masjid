@@ -1,0 +1,8 @@
+SELECT nama
+FROM fasilitas_publik
+WHERE LOWER(jenis) = 'masjid'
+AND ST_DWithin(
+geom::geography,
+ST_GeomFromText('POINT(105.652 -5.730)',4326)::geography,
+500
+);
