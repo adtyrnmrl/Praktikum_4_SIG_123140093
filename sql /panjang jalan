@@ -1,0 +1,4 @@
+SELECT nama,
+ROUND(ST_Length(geom::geography)::numeric)
+as panjang_m
+FROM jalan LIMIT 3;
