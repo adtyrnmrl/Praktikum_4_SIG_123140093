@@ -1,0 +1,11 @@
+SELECT 
+nama,
+jenis,
+ROUND(ST_Distance(
+geom::geography,
+ST_GeomFromText('POINT(105.652 -5.730)',4326)::geography
+)::numeric) AS jarak_meter
+FROM fasilitas_publik
+WHERE jenis = 'Sekolah'
+ORDER BY geom <-> ST_GeomFromText('POINT(105.652 -5.730)',4326)
+LIMIT 5;
