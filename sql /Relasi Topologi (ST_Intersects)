@@ -1,0 +1,4 @@
+SELECT j.nama as jalan
+FROM jalan j, wilayah k
+WHERE k.nama = 'Kecamatan Penengahan'
+AND ST_Intersects(j.geom, k.geom);
